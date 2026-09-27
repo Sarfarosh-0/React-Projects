@@ -1,3 +1,4 @@
+import GoalCard from "./components/GoalCard"
 import Header from "./components/Header"
 import HeroSection from "./components/HeroSection"
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <Header></Header>
       <HeroSection />
+      <GoalCard/>
     </>
   )
 }
