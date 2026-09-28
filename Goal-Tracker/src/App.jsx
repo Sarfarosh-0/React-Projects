@@ -1,4 +1,6 @@
-import GoalCard from "./components/GoalCard"
+// import GoalCard from "./components/GoalCard"
+import Footer from "./components/Footer"
+import GoalContainer from "./components/GoalConatiner"
 import Header from "./components/Header"
 import HeroSection from "./components/HeroSection"
 
@@ -7,7 +9,8 @@ function App() {
     <>
       <Header></Header>
       <HeroSection />
-      <GoalCard/>
+      <GoalContainer />
+      <Footer />
     </>
   )
 }
