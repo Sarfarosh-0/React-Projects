@@ -3,7 +3,7 @@ import { Sun } from "lucide-react";
 export default function HeroSection() {
     return (
         <section className="w-full max-w-5xl mx-auto mt-4 p-2 md:p-3 rounded-2xl bg-linear-to-r from-blue-600 via-indigo-600 to-violet-600 text-white shadow-xl shadow-indigo-500/10 transition-all">
-            < className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 {/* Left Section */}
                 <div className="flex items-center gap-4 md:gap-6">
                     
@@ -31,7 +31,7 @@ export default function HeroSection() {
                         <span>Keep Going</span>
                     </div>
                 </div>
-            </>
+            </div>
         </section>
     );
 }
