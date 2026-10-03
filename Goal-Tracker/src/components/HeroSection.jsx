@@ -6,12 +6,12 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 {/* Left Section */}
                 <div className="flex items-center gap-4 md:gap-6">
-                    
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/128/14905/14905000.png"
-                            alt="Trophy celebration icon"
-                            className="w-10 h-10 md:w-12 md:h-12 object-contain"
-                        />
+
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/128/14905/14905000.png"
+                        alt="Trophy celebration icon"
+                        className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                    />
 
 
                     <div className="space-y-1">
@@ -23,8 +23,6 @@ export default function HeroSection() {
                         </p>
                     </div>
                 </div>
-
-                {/* Right Badge/Action */}
                 <div className="w-full sm:w-auto flex justify-start sm:justify-end shrink-0">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-md border border-white/25 rounded-full text-white font-semibold text-sm shadow-sm hover:bg-white/25 transition-colors cursor-default">
                         <Sun className="w-4 h-4 text-amber-300 fill-amber-300" />
