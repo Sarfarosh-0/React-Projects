@@ -1,7 +1,11 @@
-
 import { CircleCheckBig, CircleDot, LayoutGrid } from "lucide-react";
 
-export default function FilterCard() {
+interface FilterCardProps {
+    setActiveTab: React.Dispatch<React.SetStateAction<"all-Task" | "active-Task" | "completed-Task">>;
+    activeTab: "all-Task" | "active-Task" | "completed-Task";
+}
+
+export default function FilterCard({ setActiveTab, activeTab }: FilterCardProps) {
     return (
         <div className="flex flex-col gap-4 bg-white px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
 
@@ -14,6 +18,7 @@ export default function FilterCard() {
                 {/* All */}
                 <button
                     type="button"
+                    onClick={() => setActiveTab("all-Task")}
                     aria-pressed="true"
                     className="flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-700 active:scale-95"
                 >
@@ -24,6 +29,7 @@ export default function FilterCard() {
                 {/* Active */}
                 <button
                     type="button"
+                    onClick={() => setActiveTab("active-Task")}
                     aria-pressed="false"
                     className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm font-semibold text-gray-600 transition-all hover:border-green-200 hover:bg-green-50 hover:text-green-700 active:scale-95"
                 >
@@ -34,6 +40,7 @@ export default function FilterCard() {
                 {/* Completed */}
                 <button
                     type="button"
+                    onClick={() => setActiveTab("completed-Task")}
                     aria-pressed="false"
                     className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm font-semibold text-gray-600 transition-all hover:border-green-200 hover:bg-green-50 hover:text-green-700 active:scale-95"
                 >

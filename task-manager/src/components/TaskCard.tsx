@@ -1,11 +1,13 @@
 import { Trash2 } from "lucide-react";
 
-type TaskProps = {
+interface TaskProps {
+    key: string;
     title: string;
-    completed: boolean;
-};
+    completed?: boolean;
+    deleteTask?: (id: string) => void;
+}
 
-export default function Task({ title, completed }: TaskProps) {
+export default function TaskCard({ key, title, completed, deleteTask }: TaskProps) {
 
     return (
         <div className="group flex items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm transition-all hover:border-green-200 hover:shadow-md sm:px-5">
@@ -44,6 +46,7 @@ export default function Task({ title, completed }: TaskProps) {
 
                 <button
                     type="button"
+                    onClick={() => deleteTask && deleteTask(key)}
                     aria-label="Delete Learn React Hooks"
                     className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
                 >

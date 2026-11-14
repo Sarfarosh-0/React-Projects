@@ -1,15 +1,12 @@
+import TaskCard from "./TaskCard";
+import type { Task } from "../App";
 
-import Task from "./Task";
+interface TaskContainerProps {
+    tasks: Task[];
+    deleteTask: (idToDelete: string) => void;
+}
 
-const tasks = [
-    { id: 1, title: "Learn React Hooks", completed: true },
-    { id: 2, title: "Practice useState", completed: false },
-    { id: 3, title: "Understand useEffect", completed: false },
-    { id: 4, title: "Build a Todo App", completed: true },
-    { id: 5, title: "Practice React Props", completed: false },
-];
-
-export default function TaskContainer() {
+export default function TaskContainer({ tasks, deleteTask }: TaskContainerProps) {
     return (
         <section className="w-full px-4 py-5 sm:px-6">
             {/* Section Heading */}
@@ -27,10 +24,11 @@ export default function TaskContainer() {
             <div className="flex flex-col gap-3">
                 {tasks.length > 0 ? (
                     tasks.map((task) => (
-                        <Task
+                        <TaskCard
                             key={task.id}
                             title={task.title}
                             completed={task.completed}
+                            deleteTask={() => deleteTask(task.id)}
                         />
                     ))
                 ) : (
