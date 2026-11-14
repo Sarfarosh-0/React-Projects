@@ -27,7 +27,11 @@ export default function TaskContainer() {
             <div className="flex flex-col gap-3">
                 {tasks.length > 0 ? (
                     tasks.map((task) => (
-                        <Task key={task.id} />
+                        <Task
+                            key={task.id}
+                            title={task.title}
+                            completed={task.completed}
+                        />
                     ))
                 ) : (
                     <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-green-200 bg-green-50/50 px-4 py-12 text-center">
