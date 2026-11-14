@@ -1,10 +1,10 @@
-import { X } from "lucide-react";
+import MainBody from "./components/MainBody";
 
 export default function App() {
   return (
-    <h1 className="bg-red-400">Hello World
-      <X />
-    </h1>
+    <main className="flex justify-center items-center p-10">
+      <MainBody></MainBody>
+    </main>
 
   )
 }
