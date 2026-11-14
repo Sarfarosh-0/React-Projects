@@ -1,6 +1,7 @@
 import FilterCard from "./FilterCard";
 import Header from "./Header";
 import InputTask from "./InputTask";
+import TaskContainer from "./TaskContainer";
 
 export default function MainBody() {
     return (
@@ -8,6 +9,7 @@ export default function MainBody() {
             <Header />
             <InputTask />
             <FilterCard />
+            <TaskContainer />
         </section>
     );
 }
