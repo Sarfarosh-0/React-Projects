@@ -45,6 +45,16 @@ export default function App() {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
+  const allTask = tasks.length;
+  const activeTask = tasks.filter((task) => !task.completed).length;
+  const completedTask = tasks.filter((task) => task.completed).length;
+
+  const filteredTasks = tasks.filter((task) => {
+    if (activeTab === "active-Task") return !task.completed;
+    if (activeTab === "completed-Task") return task.completed;
+    return true;
+  })
+
   return (
     <main className="flex justify-center items-center p-10 min-h-screen bg-gray-50">
       <MainBody
@@ -52,10 +62,14 @@ export default function App() {
         activeTab={activeTab}
         title={title}
         setTitle={setTitle}
-        tasks={tasks}
+        tasks={filteredTasks}
         addTask={addTask}
         deleteTask={deleteTask}
         toggleTask={toggleTask}
+
+        allTask={allTask}
+        activeTask={activeTask}
+        completedTask={completedTask}
       />
     </main>
   );

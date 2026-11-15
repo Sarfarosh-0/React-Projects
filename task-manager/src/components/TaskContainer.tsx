@@ -5,6 +5,7 @@ interface TaskContainerProps {
     tasks: Task[];
     deleteTask: (idToDelete: string) => void;
     toggleTask: (id: string) => void;
+    activeTab: "all-Task" | "active-Task" | "completed-Task";
 }
 
 export default function TaskContainer({ tasks, deleteTask, toggleTask }: TaskContainerProps) {

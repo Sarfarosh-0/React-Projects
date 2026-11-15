@@ -3,9 +3,12 @@ import { CircleCheckBig, CircleDot, LayoutGrid } from "lucide-react";
 interface FilterCardProps {
     setActiveTab: React.Dispatch<React.SetStateAction<"all-Task" | "active-Task" | "completed-Task">>;
     activeTab: "all-Task" | "active-Task" | "completed-Task";
+    allTask: number;
+    activeTask: number;
+    completedTask: number;
 }
 
-export default function FilterCard({ setActiveTab, activeTab }: FilterCardProps) {
+export default function FilterCard({ setActiveTab, activeTab, allTask, activeTask, completedTask }: FilterCardProps) {
     return (
         <div className="flex flex-col gap-4 bg-white px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
 
@@ -63,19 +66,19 @@ export default function FilterCard({ setActiveTab, activeTab }: FilterCardProps)
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl border border-green-100 bg-green-50 px-4 py-3 text-sm">
                 <div className="flex items-center gap-2 text-gray-600">
                     <span>Total</span>
-                    <span className="font-bold text-gray-900">3</span>
+                    <span className="font-bold text-gray-900">{allTask}</span>
                 </div>
 
                 <div className="flex items-center gap-2 text-gray-600">
                     <span className="h-2 w-2 rounded-full bg-blue-500" />
                     <span>Active</span>
-                    <span className="font-bold text-gray-900">1</span>
+                    <span className="font-bold text-gray-900">{activeTask}</span>
                 </div>
 
                 <div className="flex items-center gap-2 text-gray-600">
                     <span className="h-2 w-2 rounded-full bg-green-500" />
                     <span>Completed</span>
-                    <span className="font-bold text-gray-900">2</span>
+                    <span className="font-bold text-gray-900">{completedTask}</span>
                 </div>
             </div>
         </div>
