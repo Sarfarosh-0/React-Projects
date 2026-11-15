@@ -1,5 +1,6 @@
 
 import AnswerOption from "./AnswerOption";
+import QuizNavigation from "./QuizNavigation";
 
 export default function QuestionCard() {
     return (
@@ -27,6 +28,8 @@ export default function QuestionCard() {
                 <AnswerOption />
                 <AnswerOption />
             </div>
+
+            <QuizNavigation />
 
         </section>
     );
