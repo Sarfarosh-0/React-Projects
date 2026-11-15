@@ -4,9 +4,10 @@ import type { Task } from "../App";
 interface TaskContainerProps {
     tasks: Task[];
     deleteTask: (idToDelete: string) => void;
+    toggleTask: (id: string) => void;
 }
 
-export default function TaskContainer({ tasks, deleteTask }: TaskContainerProps) {
+export default function TaskContainer({ tasks, deleteTask, toggleTask }: TaskContainerProps) {
     return (
         <section className="w-full px-4 py-5 sm:px-6">
             {/* Section Heading */}
@@ -25,10 +26,11 @@ export default function TaskContainer({ tasks, deleteTask }: TaskContainerProps)
                 {tasks.length > 0 ? (
                     tasks.map((task) => (
                         <TaskCard
-                            key={task.id}
+                            id={task.id}
                             title={task.title}
                             completed={task.completed}
                             deleteTask={() => deleteTask(task.id)}
+                            toggleTask={toggleTask}
                         />
                     ))
                 ) : (

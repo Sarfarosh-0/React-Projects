@@ -12,10 +12,11 @@ interface MainBodyProps {
     tasks: Task[];
     addTask: () => void;
     deleteTask: (idToDelete: string) => void;
+    toggleTask: (id: string) => void;
 }
 
 
-export default function MainBody({ setActiveTab, activeTab, title, setTitle, tasks, addTask, deleteTask }: MainBodyProps) {
+export default function MainBody({ setActiveTab, activeTab, title, setTitle, tasks, addTask, deleteTask, toggleTask }: MainBodyProps) {
     return (
         <section className="mx-auto min-h-150 w-full overflow-hidden rounded-2xl border border-green-100 bg-white shadow-xl">
             <Header />
@@ -31,6 +32,7 @@ export default function MainBody({ setActiveTab, activeTab, title, setTitle, tas
             <TaskContainer
                 tasks={tasks}
                 deleteTask={deleteTask}
+                toggleTask={toggleTask}
             />
         </section>
     );

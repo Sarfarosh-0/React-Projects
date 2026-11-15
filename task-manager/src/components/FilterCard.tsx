@@ -20,7 +20,11 @@ export default function FilterCard({ setActiveTab, activeTab }: FilterCardProps)
                     type="button"
                     onClick={() => setActiveTab("all-Task")}
                     aria-pressed="true"
-                    className="flex items-center gap-2 rounded-xl bg-green-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-green-700 active:scale-95"
+                    className=
+                    {`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all active:scale-95 ${activeTab === "all-Task"
+                        ? "bg-green-600 text-white shadow-sm hover:bg-green-700"
+                        : "border border-gray-200 bg-gray-50 text-gray-600 hover:border-green-200 hover:bg-green-50 hover:text-green-700"
+                        }`}
                 >
                     <LayoutGrid size={19} />
                     All
@@ -31,7 +35,10 @@ export default function FilterCard({ setActiveTab, activeTab }: FilterCardProps)
                     type="button"
                     onClick={() => setActiveTab("active-Task")}
                     aria-pressed="false"
-                    className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm font-semibold text-gray-600 transition-all hover:border-green-200 hover:bg-green-50 hover:text-green-700 active:scale-95"
+                    className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all active:scale-95 ${activeTab === "active-Task"
+                        ? "bg-green-600 text-white shadow-sm hover:bg-green-700"
+                        : "border border-gray-200 bg-gray-50 text-gray-600 hover:border-green-200 hover:bg-green-50 hover:text-green-700"
+                        }`}
                 >
                     <CircleDot size={19} />
                     Active
@@ -42,7 +49,10 @@ export default function FilterCard({ setActiveTab, activeTab }: FilterCardProps)
                     type="button"
                     onClick={() => setActiveTab("completed-Task")}
                     aria-pressed="false"
-                    className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm font-semibold text-gray-600 transition-all hover:border-green-200 hover:bg-green-50 hover:text-green-700 active:scale-95"
+                    className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all active:scale-95 ${activeTab === "completed-Task"
+                        ? "bg-green-600 text-white shadow-sm hover:bg-green-700"
+                        : "border border-gray-200 bg-gray-50 text-gray-600 hover:border-green-200 hover:bg-green-50 hover:text-green-700"
+                        }`}
                 >
                     <CircleCheckBig size={19} />
                     Completed

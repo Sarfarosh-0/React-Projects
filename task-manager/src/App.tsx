@@ -8,7 +8,6 @@ export interface Task {
 }
 
 export default function App() {
-
   const [activeTab, setActiveTab] = useState<"all-Task" | "active-Task" | "completed-Task">("all-Task");
   const [title, setTitle] = useState("");
 
@@ -16,8 +15,6 @@ export default function App() {
     const stored = localStorage.getItem("tasks");
     return stored ? JSON.parse(stored) : [];
   });
-
-  // const sourceTasks = activeTab === "all-Task"
 
   function addTask() {
     if (!title.trim()) return;
@@ -30,19 +27,26 @@ export default function App() {
 
     const updatedTasks = [...tasks, newTask];
     setTasks(updatedTasks);
-    localStorage.setItem("notes", JSON.stringify(updatedTasks));
-
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     setTitle("");
   }
 
   const deleteTask = (idToDelete: string) => {
-    const updateTasks = tasks.filter((task) => task.id !== idToDelete);
-    setTasks(updateTasks);
-    localStorage.setItem("deletedNotes", JSON.stringify(updateTasks));
-  }
+    const updatedTasks = tasks.filter((task) => task.id !== idToDelete);
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
+
+  const toggleTask = (idToToggle: string) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === idToToggle ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
 
   return (
-    <main className="flex justify-center items-center p-10">
+    <main className="flex justify-center items-center p-10 min-h-screen bg-gray-50">
       <MainBody
         setActiveTab={setActiveTab}
         activeTab={activeTab}
@@ -51,8 +55,8 @@ export default function App() {
         tasks={tasks}
         addTask={addTask}
         deleteTask={deleteTask}
+        toggleTask={toggleTask}
       />
     </main>
-
-  )
+  );
 }
