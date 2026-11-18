@@ -1,9 +1,17 @@
-
 import Header from "../components/Header";
 import ProgressBar from "../components/ProgressBar";
 import QuestionCard from "../components/QuestionCard";
 
-export default function Quiz() {
+// interface Question {
+//     id: number;
+//     question: string;
+//     options: string[];
+//     correctAnswer: string;
+//     explanation: string;
+// }
+
+export default function Quiz(allQuestions ) {
+    console.log(allQuestions);
     return (
         <main className="flex min-h-screen w-full items-center justify-center bg-gray-50 p-4">
             <div className="flex w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
@@ -38,8 +46,8 @@ export default function Quiz() {
                     <ProgressBar progress={10} />
                 </section>
 
-               
-                    <QuestionCard />
+
+                <QuestionCard />
 
             </div>
         </main>
